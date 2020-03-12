@@ -42,12 +42,22 @@ button.addEventListener("click", async () => {
   );
   console.log(resp);
   const breedImage = document.querySelector("#breed-image");
-  breedImage.innerHTML = `<img src ="${resp.data[0].url}" />`;
+  let image = document.createElement("img");
+  image.style.maxWidth = "500px";
+  image.style.maxHeight = "500px";
+  image.style.border = "5px solid black";
+  image.src = "${resp.data[0].url}";
+  breedImage.appendChild(image);
+  // breedImage.innerHTML = `<img src ="${resp.data[0].url}" />`;
   const res = await axios.get(
     `https://api.thedogapi.com/v1/breeds/search?q=${
       select[select.selectedIndex].text
     }`
   );
+
+  breedImage.style.maxWidth = "250PX";
+  breedImage.style.border = "5px solid black";
+
   console.log(res);
   const breedData = document.querySelector("#breed-data-table");
   breedData.innerHTML = "";
