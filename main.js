@@ -1,39 +1,3 @@
-// Axios calls will need to be formatted like this:
-// axios.get("your endpoint url",
-//     {
-//       "x-api-key":
-//     })
-// const apikey = "916f1bb3-859b-4408-987c-416fce877f19";
-// let endpoint = "https://api.thecatapi.com/v1/categories";
-// const button = document.querySelector("#try-me");
-// const select = document.querySelector("select");
-// // ---------------------------------------------
-// // Select Drop down
-// //----------------------------------------------
-// const categories = async () => {
-//   const response = await axios.get(`${endpoint}`, {
-//     "x-api-key": apikey
-//   });
-//   response.data.forEach(category => {
-//     select.innerHTML += `<option value = ${category.id}> ${category.name} </option>`;
-//   });
-//   console.log(response);
-// };
-// categories();
-// //-----------------------------------------
-// // images
-// // ----------------------------------------
-// button.addEventListener("click", async () => {
-//   const resp = await axios.get(
-//     `https://api.thecatapi.com/v1/images/search?category_ids=${select.value}`,
-//     {
-//       "x-api-key": apikey
-//     }
-//   );
-//   const catPic = document.querySelector("#catpic");
-//   catPic.innerHTML = `<img src = "${resp.data[0].url}" />`;
-// });
-
 // npm i -g surge
 
 // password = nasal@123
@@ -52,16 +16,17 @@ async function test() {
 }
 test();
 
-let endpoint = document - querySelector("https://api.thedogapi.com/v1/breeds");
-const select = document.querySelector("select-box1");
+let endpoint = "https://api.thedogapi.com/v1/breeds";
+const select = document.querySelector("#select-box1");
 const option = document.querySelector("select");
+const button = document.querySelector("button");
 // ---------------------------------------------
 // Select Drop down
 //----------------------------------------------
 const categories = async () => {
   const response = await axios.get(`${endpoint}`);
   response.data.forEach(category => {
-    select.innerHTML += `<option value = ${category.id}> ${category.name} </option>`;
+    select.innerHTML += `<option value = "${category.id}"> ${category.name} </option>`;
   });
   console.log(response);
 };
@@ -69,12 +34,28 @@ categories();
 //-----------------------------------------
 // images
 // ----------------------------------------
-select.addEventListener("click", async () => {
+button.addEventListener("click", async () => {
   const resp = await axios.get(
     `https://api.thedogapi.com/v1/images/search?include_breed=1&breed_id=`
   );
   const breedImage = document.querySelector("#breed-image");
   breedImage.innerHTML = `<img src = "${resp.data[0].url}" />`;
+});
+//---------------------------------------
+// breed info
+//--------------------------------------
+button.addEventListener("click", async () => {
+  const res = await axios.get(`https://api.thedogapi.com/v1/breeds`);
+  const breedData = document.querySelector("#breed-data-table");
+  breedData.innerHTML = "";
+  for (let i = 0; i < breedData.length; i++) {
+    breedData.innerHTML += `
+    <p>Name: ${res.data[i].name}</p>
+    <p>Temperament: ${res.data[i].temperament}</p>
+    <p>Purpose: ${res.data[i].bred_for}</p>
+    <p>Life: ${res.data[i].life_span}</p>
+    `;
+  }
 });
 
 // function getBreeds() {
