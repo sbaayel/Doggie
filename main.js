@@ -36,19 +36,22 @@ categories();
 // ----------------------------------------
 button.addEventListener("click", async () => {
   const resp = await axios.get(
-    `https://api.thedogapi.com/v1/images/search?include_breed=1&breed_id=`
+    `https://api.thedogapi.com/v1/images/search?include_breed=1&breed_id=${
+      select[select.selectedIndex].id
+    }`
   );
+  console.log(resp);
   const breedImage = document.querySelector("#breed-image");
-  breedImage.innerHTML = `<img src = "${resp.data[0].url}" />`;
-});
-//---------------------------------------
-// breed info
-//--------------------------------------
-button.addEventListener("click", async () => {
-  const res = await axios.get(`https://api.thedogapi.com/v1/breeds`);
+  breedImage.innerHTML = `<img src ="${resp.data[0].url}" />`;
+  const res = await axios.get(
+    `https://api.thedogapi.com/v1/breeds/search?q=${
+      select[select.selectedIndex].text
+    }`
+  );
+  console.log(res);
   const breedData = document.querySelector("#breed-data-table");
   breedData.innerHTML = "";
-  for (let i = 0; i < breedData.length; i++) {
+  for (let i = 0; i < res.data.length; i++) {
     breedData.innerHTML += `
     <p>Name: ${res.data[i].name}</p>
     <p>Temperament: ${res.data[i].temperament}</p>
@@ -57,6 +60,10 @@ button.addEventListener("click", async () => {
     `;
   }
 });
+//---------------------------------------
+// breed info
+//--------------------------------------
+button.addEventListener("click", async () => {});
 
 // function getBreeds() {
 //   ajax_get("https://api.thedogapi.com/v1/breeds", function(data) {
