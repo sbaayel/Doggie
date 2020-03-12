@@ -1,0 +1,696 @@
+body {
+  margin: 0;
+  font-family: "Open sans", "serif";
+  color: black;
+}
+
+/* header section */
+
+#home-link {
+  width: 60px;
+  margin-right: 10px;
+}
+
+#hero-section{
+  height: 100%;
+  margin: 0;
+  /* The image used */
+  background-image: url("images/heroimage.png");
+
+  /* Full height */
+  height: 50%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#header {
+  
+  width: 100%;
+  display: flex;
+  background: #dce5ea;
+  
+  
+}
+
+#header div {
+  display: flex;
+  width: 30%;
+  margin-left: 10%;
+  align-items: center;
+}
+
+nav {
+  width: 50%;
+  margin-right: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: right;
+  padding-top: 20px;
+
+}
+
+
+nav a {
+  font-weight: bold;
+  font-size: 1em;
+  font-family: sans-serif;
+}
+nav button {
+  background-color: transparent;
+  width: 120px;
+  height: 40px;
+  font-size: 0.75em;
+  border: 2px solid #000033;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+nav button:hover {
+  background-color: #000033;
+  color: white;
+}
+
+a {
+  text-decoration: none; /* this is used to remove any default styling */
+  color: #000033;
+}
+
+a:hover {
+  color: blue; /* this is for applying a hover effect  */
+}
+
+h1 {
+  font-family: "Open sans", sans-serif;
+  text-align: justify;
+  
+}
+
+h2 {
+  font-family: "Open sans", sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+button {
+  display: inline-block;
+}
+/* hero section */
+
+
+
+#hero-section {
+  height: 450px;
+  display: flex;
+  background: #dce5ea;
+}
+
+#hero-image {
+  width: 50%;
+  text-align: right;
+  padding-right: 40px;
+}
+
+#hero-image img {
+  height: 450px;
+}
+
+#hero-text {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#hero-text h1 {
+  font-size: 4em;
+  margin: 0;
+}
+
+#hero-text h2 {
+  font-size: 1.5em;
+  font-family: "Lora", serif;
+  margin: 0 0 0 10px;
+}
+
+#hero-text button {
+  width: 250px;
+  height: 60px;
+  margin: 10px 0 0 10px;
+  border: 3px solid #000033;
+  border-radius: 5px;
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #000033;
+  color: white;
+}
+
+#hero-text button:hover {
+  border-color: white;
+}
+
+#next-hero {
+  height: 600px;
+  display: flex;
+}
+
+#next-hero-button {
+  width: 200%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: rigt;
+  padding-left: 40px;
+  height: 800px;
+  align-items: baseline;
+  flex-grow: ;
+}
+
+#next-hero-title {
+  font-size: 4em;
+  text-align: right;
+  width: 100%;
+}
+
+#sick {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+#sick-puppy {
+  text-align: right;
+  height: 600px;
+}
+
+#sick-puppy img {
+  height: 450px;
+  margin-top: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #06d85f;
+  margin: 80px 0;
+}
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  
+  font-size: 1em;
+  padding: 10px;
+  color: #000033;
+  border: 2px solid #06d85f;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06d85f;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  display: flex;
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06d85f;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .box {
+    width: 70%;
+  }
+  .popup {
+    width: 70%;
+  }
+  .button {
+    width: 70%;
+  }
+}
+
+.collapsible {
+  background-color: #000033;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active,
+.collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: "\002B";
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+.open-btn {
+  display: flex;
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+.open-button {
+  font-size: 1em;
+  padding: 10px;
+  color: #000033;
+  border: 2px solid #06d85f;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.first-form-popup {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  left: 45%;
+  top: 5%;
+  transform: translate(-45%, 5%);
+  border: 2px solid #666666;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 500px;
+  padding: 20px;
+  background-color: white;
+}
+
+.form-container input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input[type="text"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  margin: 20px;
+}
+
+/* review section */
+
+#reviews {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#reviews img {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviewer {
+  width: 30%;
+  text-align: center;
+}
+/* contact section */
+
+footer {
+  padding-top: 20px;
+  background: linear-gradient(to right, white, lightblue);
+}
+
+#contact {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+small {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #000033;
+  color: white;
+  display: block;
+}
+
+/* try.html page */
+
+#try-main {
+  height: 75vh;
+  min-height: 550px;
+  display: flex;
+  text-align: center;
+}
+
+#catselect {
+  width: 50%;
+}
+
+#catselect h2 {
+  padding-top: 50px;
+  font-size: 2em;
+}
+
+#catselect select,
+#catselect button {
+  width: 50%;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 1.5em;
+  min-width: 300px;
+}
+
+#catselect button {
+  margin-top: 200px;
+  border: 3px solid #000033;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #000033;
+  color: white;
+}
+
+#catselect button:hover {
+  border-color: white;
+  cursor: pointer;
+}
+
+#catpic img {
+  width: 400px;
+  height: 400px;
+  margin-top: 85px;
+  object-fit: cover;
+  border: 2px solid #000033;
+  border-radius: 5px;
+}
+
+/* Media queries for tablets abd smaller */
+@media only screen and (max-width: 770px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+
+  nav a {
+    font-size: 1em;
+  }
+  nav button {
+    width: 100px;
+  }
+
+  header div {
+    margin-left: 5%;
+    width: 20%;
+  }
+
+  
+
+  #hero-section {
+    display: block;
+  }
+
+  #hero-image {
+    width: 100%;
+    text-align: center;
+  }
+
+  #hero-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  #hero-text h2 {
+    text-align: center;
+    padding: 0;
+  }
+  #hero-image img {
+    height: 200px;
+  }
+
+  #vid-gallery {
+    display: block;
+  }
+  .video {
+    width: 96%;
+    margin-bottom: 10px;
+  }
+
+  #reviews {
+    display: block;
+  }
+
+  .reviewer {
+    width: 100%;
+    padding-top: 30px;
+  }
+  .reviewer p {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #try-main {
+    display: block;
+    height: auto;
+  }
+
+  #catselect,
+  #catpic {
+    width: 100%;
+  }
+}
+
+.select-css {
+  display: flex;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #444;
+  line-height: 1.3;
+  padding: 0.6em 1.4em 0.5em 0.8em;
+  width: 30%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid #aaa;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0.5em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"),
+    linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
+  flex-direction: column;
+  text-align: center;
+}
+.select-css::-ms-expand {
+  display: none;
+}
+.select-css:hover {
+  border-color: #888;
+}
+.select-css:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  color: #222;
+  outline: none;
+}
+.select-css option {
+  font-weight: normal;
+}
+
+.drop {
+  padding: 3rem;
+}
+
+
+
+body {
+  background: #ffffff; 
+  color: #414141;
+  font-family: "Open sans", serif;
+}
+
+.select-box {
+  cursor: pointer;
+  position : relative;
+  max-width:  20em;
+  margin: 5em auto;
+  width: 100%;
+}
+
+.select,
+.label {
+  color: #414141;
+  display: block;
+  font: 400 17px/2em 'Source Sans Pro', sans-serif;
+}
+
+.select {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding: 5px 0;
+  height: 40px;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  background: none transparent;
+  border: 0 none;
+}
+.select-box1 {
+  background: #ececec;
+}
+
+.label {
+  position: relative;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.open .label::after {
+   content: "▲";
+}
+.label::after {
+  content: "▼";
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px 15px;
+  border-left: 5px solid #fff;
+}
